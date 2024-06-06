@@ -3,14 +3,14 @@ import React from 'react';
 import { Text, View, StyleSheet, TextInput, Button, TouchableOpacity } from "react-native";
 import { A } from '@expo/html-elements';
 
-
+ 
 export default function Index() {
   return (
     <View style= {styles.container}>
     <View style={styles.loginBox}>
-    <View style={styles.topBox}></View>
+    <View style={styles.topBox}>
       <Text style={styles.login}> Login</Text>
-      
+      </View>
      <TextInput 
      style={styles.input} 
      placeholder="Email" 
@@ -22,9 +22,10 @@ export default function Index() {
      secureTextEntry 
    />
   <TouchableOpacity style={styles.button} onPress={() => alert('Login pressed')}>
-          <Text style={styles.buttonText}>Login</Text>
+          <Text style={styles.buttonText}>Entrar</Text>
         </TouchableOpacity>
-        <A href="app/redefinir.tsk">esqueceu sua senha?</A>
+      
+  <A href="app/redefinir.tsk" style={styles.senha}>esqueceu sua senha?</A> 
 
    
    
@@ -37,6 +38,7 @@ export default function Index() {
 }
 
 
+
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#C2AB89",
@@ -45,53 +47,83 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   loginBox:{
+    
+    paddingTop:0,
+    paddingLeft: 0,     
+    paddingRight: 0, 
     width: '40%',
     padding: 20,
     backgroundColor: "#AA9679",
     borderRadius: 10,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.8,
+    shadowColor: 'rgba(103, 42, 21, 0.99)',
+    shadowOffset: { width: 0, height: 4},
+    shadowOpacity: 1.0,
     shadowRadius: 10,
     elevation: 5,
   },
   login :{
+    color: '#261207',
     alignSelf: 'center',
     fontFamily: "Inknut-Antiqua",
-    fontSize: 35,
+    fontSize: 25,
 
   },
 
   input:{
+    justifyContent: 'center', 
+    alignSelf: 'center',
+    textAlign: 'center',
+    color: 'rgba(255, 255, 255, 0.44)',
     height: 40,
-    borderColor: '#ccc',
+    width: 400,
+    borderColor: 'rgba(103, 42, 21, 0.25)',
     borderWidth: 1,
     marginBottom: 15,
     paddingHorizontal: 10,
-    borderRadius: 5,
+    borderRadius: 20,
+    alignItems: 'center',
 
   },
   button: {
     width: '20%',
     alignSelf: 'center',
-    backgroundColor: '#672A15', 
+    backgroundColor: 'rgba(103, 42, 21, 0.28)' , 
     paddingVertical: 10,
     borderRadius: 20,
+  
   },
   buttonText: {
-    color: '#fff', 
+   
+    
+    color: 'rgba(0, 0, 0, 1)', 
+    fontFamily: "Inknut-Antiqua",
     textAlign: 'center',
     fontWeight: 'bold',
     fontSize: 16,
+    
   },
   topBox:{
+    shadowColor: 'rgba(87, 42, 21, 1)',
+    shadowOffset: { width: 0, height:2},
+    shadowOpacity: 1.0,
+    borderTopEndRadius: 10,
+    borderTopLeftRadius: 10,
     marginBottom: 20, 
-    backgroundColor:"#261207",
+    backgroundColor: 'rgba(103, 42, 21, 0.4)',
     width: '100%', // Define a largura da div como 100% da largura do loginBox
-    height: 60
+    height: '100%', 
+  
+    flex:1,
+   
     
 
   },
+  senha:{
+    alignSelf: 'center',
+    marginTop: 20 ,
+    fontFamily: "Inknut-Antiqua",
+
+  }
 
  
 });
